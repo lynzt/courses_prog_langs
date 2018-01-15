@@ -20,4 +20,7 @@ COPY . /usr/src/app
 
 # EXPOSE 3010
 # CMD [ "node", "./test.js" ]
-CMD ["node_modules/.bin/mocha", "./dates_tests.js"]
+CMD ["npm", "test"]
+
+
+# docker run -it --rm -v "$PWD":/usr/src/app -v /usr/src/app/node_modules js/langs npm test
