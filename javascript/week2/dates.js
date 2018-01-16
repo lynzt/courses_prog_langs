@@ -29,3 +29,6 @@ exports.dates_in_month = function([d, ...ds], m) {
   //   return ds[0].push(this.dates_in_month(ds.slice(1), m));
   // }
 }
+
+
+// https://medium.com/dailyjs/functional-js-with-es6-recursive-patterns-b7d0813ef9e3

@@ -30,13 +30,17 @@ describe('test date fcns', function() {
   describe('test number_in_months', function() {
     it('should return formatted durations', function() {
       expect(dates.number_in_months([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], [2,3,4])).to.equal(3);
+      expect(dates.number_in_months([[2017,2,28], [2018,2,1], [2018,2,13],[2011,2,5]], [2,3,4])).to.equal(4);
+      expect(dates.number_in_months([[2017,2,28], [2018,2,1], [2018,2,13],[2011,12,5]], [2,5,4])).to.equal(3);
+      expect(dates.number_in_months([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], [2])).to.equal(1);
+      expect(dates.number_in_months([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], [5,6])).to.equal(0);
     });
   });
 
   describe('test dates_in_month', function() {
     it('should return formatted durations', function() {
-      // console.dir(dates.dates_in_month([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], 2));
-      expect(dates.dates_in_month([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], 2)).to.equal([[2017,2,28]]);
+      expect(dates.dates_in_month([[2017,2,28]], 2)).to.equal([[2017,2,28]]);
+      // expect(dates.dates_in_month([[2017,2,28], [2018,12,1], [2018,3,31],[2011,4,28]], 2)).to.equal([[2017,2,28]]);
     });
   });
 
